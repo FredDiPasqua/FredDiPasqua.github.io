@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --open --mode development --host 192.168.100.30",
-    "start:dev": "webpack-dev-server --config --host 192.168.100.30 ./webpack.dev.config.js"
+    "start": "webpack-dev-server --mode development",
+    "start:dev": "webpack-dev-server --config ./webpack.dev.config.js"
   },
   "keywords": [
     "book",
@@ -35,11 +35,13 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "sass-loader": "^9.0.2",
+    "style-loader": "^1.2.1",
     "webpack": "^4.44.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "@babel/runtime": "^7.10.5",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.5.0",
     "eslint-config-airbnb": "^18.2.0",
