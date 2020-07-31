@@ -1,13 +1,37 @@
-.name {
-    color: white;
+.main {
     position: absolute;
     z-index: 2;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    align-items: center;
-    top: 40%;
-    letter-spacing: 9px;
-    font-size: 40px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    // width: 99.5%;
+    // align-items: center;
+    top: 20%;
+    // border: 1px solid red;
+    text-align: center;
+    right: 0;
+    left:0;
+
+    .name {
+        color: white;
+        letter-spacing: 9px;
+        font-size: 65px;
+        // font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin-bottom: 0;
+        opacity: .8;
+    }
+    .title {
+        color: rgb(179, 176, 176);
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;
+        letter-spacing: 10px;
+        margin-top: 0;
+    }
+    .quote {
+        margin-top: 150px;
+        color: orange;
+    }
+    .author {
+        color: orange;
+        font-weight: bold;
+        font-style: italic;
+    }
 }
+

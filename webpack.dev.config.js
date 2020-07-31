@@ -17,7 +17,7 @@ module.exports = {
         extensions: ['.js', '.jsx']
     },
     devServer: {
-        // historyApiFallback: true,  //esto permite navegar dentro de un SPA cuando usas router
+        historyApiFallback: true,  //esto permite navegar dentro de un SPA cuando usas router
         contentBase: path.resolve(__dirname, 'dist'),
         open: true,
         port: 8000,
