@@ -4,7 +4,7 @@ const webpack = require("webpack");
 
 module.exports = {
     entry: {
-        app: path.resolve(__dirname, './src/index.js')
+        app: path.resolve(__dirname, './src/App.js')
     },
     mode: "development",
     output: {
