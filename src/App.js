@@ -3,15 +3,22 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import "./assets/styles/App.scss";
-import Header from './components/Header'
-import Home from './Routes/Home';
+import Layout from './components/Layout'
+import Main from './components/Main';
+import Projects from './components/Projects';
+import Art from './components/Art'
+import Colaborations from './components/Colaborations'
 
 const App = () => (
     <BrowserRouter>
-        <Header />
-        <Switch>
-            <Route exact path="/" component={Home} />
-        </Switch>
+        <Layout>
+            <Switch>
+                <Route exact path="/" component={Main} />
+                <Route exact path="/projects" component={Projects} />
+                <Route exact path="/art" component={Art} />
+                <Route exact path="/colaborations" component={Colaborations} />
+            </Switch>  
+        </Layout>
     </BrowserRouter>
 );
 
