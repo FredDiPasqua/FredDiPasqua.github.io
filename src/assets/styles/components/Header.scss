@@ -1,0 +1,19 @@
+.header {
+    position: absolute;
+    z-index: 2;
+    // top: 20%;
+    background-color: gray;
+    opacity: .3;
+    width: 100%;
+    // margin-top: 0;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+
+    .links {
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        margin: 20px auto;
+    }
+}
