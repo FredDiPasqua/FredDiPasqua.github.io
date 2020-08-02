@@ -1,6 +1,5 @@
 import React from 'react';
 import * as THREE from 'three';
-// import * as THREE from 'https://unpkg.com/three@0.119.1/build/three.module.js';
 import '../../assets/styles/components/Background3D.scss'
 import smoke from '../../assets/images/smoke.png'
 
@@ -30,14 +29,15 @@ class Background3D extends React.Component {
             renderer.setClearColor(0x000000, 1);
             renderer.setSize(window.innerWidth , window.innerHeight);
             document.body.appendChild(renderer.domElement);
-            // this.mount.appendChild( renderer.domElement );
+            // use ref as a mount point of the Three.js scene instead of the document.body
+            // mount.appendChild( renderer.domElement );
         
             particleSetup();
         }
         function particleSetup() {
             let loader = new THREE.TextureLoader();
         
-            loader.load({smoke}, function (texture) {
+            loader.load(smoke, function (texture) {
                 var portalGeo = new THREE.PlaneBufferGeometry(350, 350);
                 var portalMaterial = new THREE.MeshStandardMaterial({
                     map:texture,
@@ -102,7 +102,7 @@ class Background3D extends React.Component {
     render () {
         return (
             <div>
-                 {/* <img src={smoke} alt=""/> */}
+            
             </div>
             // <div ref={ref => (this.mount = ref)} />
         )
