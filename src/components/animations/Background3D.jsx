@@ -1,62 +1,99 @@
 import React from 'react';
 import * as THREE from 'three';
 import '../../assets/styles/components/Background3D.scss'
-import { Int8Attribute } from 'three';
+import smoke from './smoke.png'
+
 
 
 class Background3D extends React.Component {
 
     componentDidMount() {
-        let scene, camera;
-
-        function init() {
+        var scene, sceneLight, portalLight, cam, renderer, clock ,portalParticles = [],smokeParticles = [] ;
+        function initScene(){
             scene = new THREE.Scene();
-            camera = new THREE.PerspectiveCamera( 60, window.innerWidth/window.innerHeight, 1, 1000 );
-            camera.position.z = 1;
-            camera.position.x = 1.16;
-            camera.position.y = -0.12;
-            camera.position.z = 0.27;
-    
-            let ambient = new THREE.AmbientLight(0x555555);
-            scene.add(ambient);
-    
-            var renderer = new THREE.WebGLRenderer();
-            renderer.setSize( window.innerWidth, window.innerHeight );
-            scene.fog = new THREE.FogExp2(0x03544e, 0.001);
-            renderer.setClearColor(scene.fog.color);
-            // document.body.appendChild( renderer.domElement );
-            // use ref as a mount point of the Three.js scene instead of the document.body
-            render();
+            sceneLight = new THREE.DirectionalLight(0xffffff,0.5);
+            sceneLight.position.set(0,0,1);
+            scene.add(sceneLight);
+            portalLight = new THREE.PointLight(0x062d89, 30, 600, 1.7);
+            portalLight.position.set(0,0,250);
+            scene.add(portalLight);
+            cam = new THREE.PerspectiveCamera(80,window.innerWidth/window.innerHeight,1,10000);
+            cam.position.z = 1000;
+            scene.add(cam);
+            renderer = new THREE.WebGLRenderer();
+            renderer.setClearColor(0x000000,1);
+            renderer.setSize(window.innerWidth , window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+            particleSetup();
         }
-        function render() {
-            renderer.render(scene, camera);
-            requestAnimationFrame(render);
+        function particleSetup() {
+            let loader = new THREE.TextureLoader();
+            loader.load({smoke}, function (texture) {
+                portalGeo = new THREE.PlaneBufferGeometry(350,350);
+                portalMaterial = new THREE.MeshStandardMaterial({
+                    map:texture,
+                    transparent: true
+                });
+                smokeGeo = new THREE.PlaneBufferGeometry(1000,1000);
+                smokeMaterial = new THREE.MeshStandardMaterial({
+                    map:texture,
+                    transparent: true
+                });
+
+                for(let p=880 ; p > 250 ; p--) {
+                    let particle = new THREE.Mesh(portalGeo,portalMaterial);
+                    particle.position.set(
+                        0.5 * p * Math.cos((4 * p * Math.PI) / 180),
+                        0.5 * p * Math.sin((4 * p * Math.PI) / 180),
+                        0.1 * p
+                    );
+                    particle.rotation.z = Math.random() *360;
+                    portalParticles.push(particle);
+                    scene.add(particle);
+
+                    renderer.render(scene,cam);
+                }
+                // for(let p=0;p<40;p++) {
+                //     let particle = new THREE.Mesh(smokeGeo,smokeMaterial);
+                //     particle.position.set(
+                //         Math.random() * 1000-500,
+                //         Math.random() * 400-200,
+                //         25
+                //     );
+                //     particle.rotation.z = Math.random() *360;
+                //     particle.material.opacity = 0.6;
+                //     portalParticles.push(particle);
+                //     scene.add(particle);
+                // }
+                // clock = new THREE.Clock();
+                // animate();
+                
+            });
+            
         }
-        init();
-
-
-
-
-        this.mount.appendChild( renderer.domElement );
-        var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-        var material = new THREE.MeshBasicMaterial( { color: 0x558822 } );
-        var cube = new THREE.Mesh( geometry, material );
-        scene.add( cube );
-        camera.position.z = 2.8;
-
-        var animate = function () {
-            requestAnimationFrame( animate );
-            cube.rotation.x += 0.01;
-            cube.rotation.y += 0.01;
-            renderer.render( scene, camera );
-        };
-        animate();
-
+        // function animate() {
+        //     let delta = clock.getDelta();
+        //     portalParticles.forEach(p => {
+        //         p.rotation.z -= delta *1.5;
+        //     });
+        //     smokeParticles.forEach(p => {
+        //         p.rotation.z -= delta *0.2;
+        //     });
+        //     if(Math.random() > 0.9) {
+        //         portalLight.power =350 + Math.random()*500;
+        //     }
+        //     renderer.render(scene,cam);
+        //     requestAnimationFrame(animate);
+        // }
+        initScene();
     }
 
     render () {
         return (
-            <div ref={ref => (this.mount = ref)} />
+            <div>
+            //     {/* <img src={smoke} alt=""/> */}
+            </div>
+            // <div ref={ref => (this.mount = ref)} />
         )
     }
 };
