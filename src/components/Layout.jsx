@@ -6,11 +6,11 @@ import ParticlesCustom from './animations/Particles'
 
 const Layout = ({ children }) => (
     <>
-        <Header />
-        <ParticlesCustom />
-        <Footer />
-        {children}
         <Background3D/>
+        {children}
+        <ParticlesCustom />
+        <Header />
+        <Footer />
     </>
 );
 

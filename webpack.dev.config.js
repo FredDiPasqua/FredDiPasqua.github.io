@@ -10,7 +10,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/[name].js',
-        publicPath: 'http://192.168.100.30:8000/',
+        publicPath: 'http://192.168.0.9:8000/',      // cambia con el modem
         chunkFilename: 'js/[id].[chunkhash].js'
     },
     resolve: {
@@ -22,7 +22,7 @@ module.exports = {
         open: true,
         port: 8000,
         hot: true, 
-        host: "192.168.100.30" 
+        host: "192.168.0.9"     //cambia con el modem 
     },
     module: {
         rules: [
