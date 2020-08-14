@@ -5,10 +5,11 @@ import Background3D from './animations/Background3D';
 
 const Layout = ({ children }) => (
     <>
-        <Header />
-        <Footer />
-        {children}
         <Background3D/>
+        <Header />
+        {children}
+        <Footer />
+        <ParticlesCustom />
     </>
 );
 

@@ -31,5 +31,18 @@
         font-weight: bold;
         font-style: italic;
     }
+
+    .bio {
+        // border: 1px solid red;
+        border-radius: 25px;
+        color: white;
+        background: rgba(20, 20, 25, .9);
+        // background-color: black;
+        margin: 50px;
+        padding: 20px;
+        // position: relative;
+        // top: 220px;
+        margin-top: 220px;
+    }
 }
 

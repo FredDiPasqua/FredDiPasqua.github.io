@@ -10,19 +10,27 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/[name].js',
+<<<<<<< Updated upstream
         publicPath: 'http://192.168.100.30:8000/',
+=======
+        publicPath: 'http://localhost:5500/',      // cambia con el modem
+>>>>>>> Stashed changes
         chunkFilename: 'js/[id].[chunkhash].js'
     },
     resolve: {
         extensions: ['.js', '.jsx']
     },
     devServer: {
-        historyApiFallback: true,  //esto permite navegar dentro de un SPA cuando usas router
+        historyApiFallback: true,           //esto permite navegar dentro de un SPA cuando usas router
         contentBase: path.resolve(__dirname, 'dist'),
         open: true,
-        port: 8000,
+        port: 5500,
         hot: true, 
+<<<<<<< Updated upstream
         host: "192.168.100.30" 
+=======
+        // host: "192.168.0.3"     //cambia con el modem 
+>>>>>>> Stashed changes
     },
     module: {
         rules: [
