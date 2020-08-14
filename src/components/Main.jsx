@@ -1,7 +1,20 @@
 import React from 'react';
 import '../assets/styles/components/Main.scss';
+import { blueviolet } from 'color-name';
 
 const Main = () => {
+
+    // function toScroll () {
+    //     document.onload(() => {
+    //         window.scroll(() => {
+    //             if children.scrollTop() > 0 {
+    //                 b
+    //             }
+
+    //         })
+    //     })
+    // }
+
     return (
         <div className="main">
             <h1 className="name"  >Fred Di Pasqua</h1>
