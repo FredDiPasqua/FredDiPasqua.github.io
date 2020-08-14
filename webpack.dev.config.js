@@ -10,11 +10,15 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/[name].js',
+<<<<<<< HEAD
 <<<<<<< Updated upstream
         publicPath: 'http://192.168.100.30:8000/',
 =======
         publicPath: 'http://localhost:5500/',      // cambia con el modem
 >>>>>>> Stashed changes
+=======
+        publicPath: 'http://192.168.0.9:8000/',      // cambia con el modem
+>>>>>>> particles
         chunkFilename: 'js/[id].[chunkhash].js'
     },
     resolve: {
@@ -26,11 +30,15 @@ module.exports = {
         open: true,
         port: 5500,
         hot: true, 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
         host: "192.168.100.30" 
 =======
         // host: "192.168.0.3"     //cambia con el modem 
 >>>>>>> Stashed changes
+=======
+        host: "192.168.0.9"     //cambia con el modem 
+>>>>>>> particles
     },
     module: {
         rules: [
