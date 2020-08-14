@@ -8,11 +8,7 @@ const ParticlesCustom = () => (
             params={{
                 "particles": {
                     "number": {
-<<<<<<< HEAD
                         "value": 100
-=======
-                        "value": 80
->>>>>>> particles
                     },
                     "size": {
                         "value": 2
