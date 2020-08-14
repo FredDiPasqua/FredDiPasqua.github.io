@@ -3,4 +3,8 @@ canvas {
     position: relative;
     z-index: 1;
     opacity: .8;
+
+    overflow: hidden;
+    position: fixed;
+    // top: 0;
 }

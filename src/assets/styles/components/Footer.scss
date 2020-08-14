@@ -11,6 +11,9 @@
     display: flex;
     justify-content: space-around;
     color: white;
+   
+    overflow: hidden;
+    position: fixed;
     
     p {
         margin: auto;

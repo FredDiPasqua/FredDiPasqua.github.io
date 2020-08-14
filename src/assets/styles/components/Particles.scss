@@ -6,6 +6,9 @@
     top: 63px;
     height: 88.5vh;
     width: 100%;
+
+    overflow: hidden;
+    position: fixed;
     // opacity: radial-gradient(.5, .2);
     // -webkit-mask-image: -webkit-gradient(linear, left top, 
     // left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
