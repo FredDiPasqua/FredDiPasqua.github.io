@@ -7,6 +7,12 @@
     right: 0;
     left:0;
 
+    .mainUp {
+    transition: .9s;
+
+    }
+
+
     // overflow: hidden;
     // ::-webkit-scrollbar {display: none;}
 
@@ -41,11 +47,15 @@
         color: white;
         background: rgba(20, 20, 25, .9);
         // background-color: black;
-        margin: 50px;
+        margin: 80px;
         padding: 20px;
         // position: relative;
         // top: 220px;
         margin-top: 220px;
+
+        opacity: 0;
+
+        transition: .6s;
     }
 }
 

@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../assets/styles/components/Main.scss';
 
 const Main = () => {
 
     function toScroll () {
-        let mainView = document.getElementsById("mainUp");
+        let mainView = document.getElementById("mainUp");
         
         document.addEventListener("scroll", function(){
             console.log(("bien"));
@@ -14,11 +14,35 @@ const Main = () => {
                     console.log("que tal");
                 }
                 else{
-                    mainView.style.opacity = "1";
+                    mainView.style.opacity = "0.8";
                 }
             // })
         })
     }
+
+    function toScrollBio () {
+        let bioView = document.getElementById("mainBio");
+        
+        document.addEventListener("scroll", function(){
+            console.log(("bien"));
+            // window.scroll(function(){
+                if (document.documentElement.scrollTop > 50){
+                    bioView.style.opacity = "0.8";
+                    console.log("que tal");
+                }
+                else{
+                    bioView.style.opacity = "0";
+                }
+            // })
+        })
+    }
+
+    useEffect(() => {
+        toScroll()
+        toScrollBio()
+        console.log("entró")
+        ,[]
+    });
 
     return (
         <div className="main">
@@ -30,7 +54,7 @@ const Main = () => {
                                         cargue uno diferente</p>
                 <p className="author" >Autor del Quote</p>
             </div>
-            <div className="bio">
+            <div id="mainBio" className="bio">
                 <p className="bioP" >Desarrollador Junior en tecnologias como React, bootstrap, sass, mongoDB, docker, etc.
                     Creador de Marca de Daho Industries.
 
