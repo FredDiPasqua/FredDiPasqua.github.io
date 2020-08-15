@@ -1,14 +1,14 @@
 .main {
     position: absolute;
     z-index: 2;
-    top: 20%;
+    top: 153px;
     // border: 1px solid red;
     text-align: center;
     right: 0;
     left:0;
 
     .mainUp {
-    transition: .9s;
+    // transition: .9s;
 
     }
 
@@ -51,11 +51,18 @@
         padding: 20px;
         // position: relative;
         // top: 220px;
-        margin-top: 220px;
+        height: 60vh;
+        margin-bottom: 80px;
 
         opacity: 0;
 
-        transition: .6s;
+        // transition: .6s;
+
+        scroll-behavior: smooth;
+
+        p {
+            opacity: .9;
+        }
     }
 }
 

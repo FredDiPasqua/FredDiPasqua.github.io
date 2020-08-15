@@ -8,8 +8,8 @@ const Layout = ({ children }) => (
     <>
         <Background3D/>
         <Header />
-        {children}
         <Footer />
+        {children}
         <ParticlesCustom />
     </>
 );
