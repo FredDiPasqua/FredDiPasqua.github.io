@@ -78,12 +78,12 @@ module.exports = {
             chunkFilename: 'css/[id].[hash].css'
         }),
         new webpack.DllReferencePlugin({
-            manifest: require('./modules-manifest.json')
+            manifest: require('./modules-manifest.json')     //no funciona en el deploy 
         }),
         new AddAssetHtmlPlugin({
             filepath: path.resolve(__dirname, 'dist/js/*.dll.js'),
             outputPath: 'js',
-            publicPath: 'http://localhost:3001/js'
+            publicPath: 'http://freddipasqua.github.io'    // https://localhost:3001
 
         }),
         new CleanWebpackPlugin({
