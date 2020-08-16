@@ -1,11 +1,20 @@
 .main {
     position: absolute;
     z-index: 2;
-    top: 20%;
+    top: 153px;
     // border: 1px solid red;
     text-align: center;
     right: 0;
     left:0;
+
+    .mainUp {
+    // transition: .9s;
+
+    }
+
+
+    // overflow: hidden;
+    // ::-webkit-scrollbar {display: none;}
 
     .name {
         color: white;
@@ -30,6 +39,30 @@
         color: orange;
         font-weight: bold;
         font-style: italic;
+    }
+
+    .bio {
+        // border: 1px solid red;
+        border-radius: 25px;
+        color: white;
+        background: rgba(20, 20, 25, .9);
+        // background-color: black;
+        margin: 80px;
+        padding: 20px;
+        // position: relative;
+        // top: 220px;
+        height: 60vh;
+        margin-bottom: 80px;
+
+        opacity: 0;
+
+        // transition: .6s;
+
+        scroll-behavior: smooth;
+
+        p {
+            opacity: .9;
+        }
     }
 }
 
