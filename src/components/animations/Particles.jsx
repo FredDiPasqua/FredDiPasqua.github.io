@@ -13,6 +13,9 @@ const ParticlesCustom = () => (
                     "size": {
                         "value": 2
                     },
+                    "color": {
+                        "value": "#aaaa11"
+                    },
                     // "shape": {
                     //     "type": "polygon"
                     // }
@@ -27,7 +30,7 @@ const ParticlesCustom = () => (
                     "modes": {
                         "grab": {
                             "line_linked": {
-                                "opacity": 0.2
+                                "opacity": 0.9
                             }
                         }
                     }

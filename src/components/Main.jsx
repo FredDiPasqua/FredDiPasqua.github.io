@@ -23,9 +23,11 @@ const Main = () => {
 
     function toScrollBio () {
         let bioView = document.getElementById("mainBio");
+        let nameView = document.getElementById("main");
         
         window.addEventListener("scroll", () => {
             const scrolled = window.scrollY;
+            nameView.style.top = `${scrolled + 153}px`;    // aqui el problema
             if (scrolled <= 300) {
                 let opacity2 = (scrolled - 70) / 300;
                 // console.log(opacity2)
@@ -35,8 +37,8 @@ const Main = () => {
                 // console.log(("2"));
                 bioView.style.opacity = ".7";
             }
-            // bioView.style.top = `${scrolled}px`;
-            // console.log(`scroll : ${scrolled}`);
+            console.log(`scroll : ${scrolled}`);
+            console.log(`top : ${bioView.style.top}`);
         })
     }
 
