@@ -6,7 +6,7 @@ import ParticlesCustom from "./animations/Particles"
 
 const Layout = ({ children }) => (
     <>
-        {/* <Background3D/> */}
+        <Background3D/>
         <Header />
         <Footer />
         {children}

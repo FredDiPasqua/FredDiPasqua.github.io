@@ -35,18 +35,23 @@
     .quote {
         margin-top: 150px;
         color: orange;
+        opacity: .9;
     }
     .author {
         color: orange;
         font-weight: bold;
         font-style: italic;
+        opacity: .9;
     }
 
     .bio {
+        position: absolute;
+        top: 200px;
         // border: 1px solid red;
         border-radius: 25px;
         color: white;
         background: rgba(20, 20, 25, .9);
+        background: red;
         // background-color: black;
         margin: 80px;
         padding: 20px;
@@ -55,8 +60,9 @@
         height: 60vh;
         margin-bottom: 80px;
 
+        z-index: 3;
 
-        opacity: 0;
+        opacity: .9;
 
         // transition: .6s;
 
